@@ -82,7 +82,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0 kext-dev-mode=1 nv_disable=1 -v</string>
+		<string>dart=0 kext-dev-mode=1 nv_disable=1 alcid=13</string>
 		<key>DefaultVolume</key>
 		<string>A1B85E46-9BC5-44E2-A849-26E11D25FAE5</string>
 		<key>IgnoreNVRAMBoot</key>
@@ -112,11 +112,45 @@
 				AQAAAA==
 				</data>
 			</dict>
+			<dict>
+				<key>Device</key>
+				<string>NVidia</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Key</key>
+				<string>name</string>
+				<key>Value</key>
+				<data>
+				I2Rpc3BsYXk=
+				</data>
+			</dict>
+			<dict>
+				<key>Device</key>
+				<string>NVidia</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Key</key>
+				<string>IOName</string>
+				<key>Value</key>
+				<string>#display</string>
+			</dict>
+			<dict>
+				<key>Device</key>
+				<string>NVidia</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Key</key>
+				<string>class-code</string>
+				<key>Value</key>
+				<data>
+				/////w==
+				</data>
+			</dict>
 		</array>
 		<key>Audio</key>
 		<dict>
 			<key>Inject</key>
-			<integer>7</integer>
+			<integer>13</integer>
 		</dict>
 		<key>FakeID</key>
 		<dict>
@@ -144,9 +178,17 @@
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
-				<key>disable-external-gpu</key>
+				<key>#disable-external-gpu</key>
 				<data>
 				AQAAAA==
+				</data>
+				<key>AAPL,ig-platform-id</key>
+				<data>
+				AAAWWQ==
+				</data>
+				<key>connector-priority</key>
+				<data>
+				BA==
 				</data>
 				<key>framebuffer-con1-enable</key>
 				<data>
@@ -154,7 +196,7 @@
 				</data>
 				<key>framebuffer-con1-type</key>
 				<data>
-				EAAAAA==
+				BAAAAA==
 				</data>
 				<key>framebuffer-patch-enable</key>
 				<data>
@@ -296,7 +338,7 @@
 			<false/>
 		</dict>
 		<key>ig-platform-id</key>
-		<string>0x0A260006</string>
+		<string>0x59160000</string>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
@@ -519,6 +561,60 @@
 				<key>Replace</key>
 				<data>
 				PGludGVnZXI+MjU3ODwvaW50ZWdlcj4=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Zeroing 11d4198a codec (patched by AppleHDA Patcher.app)</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				ihnUEQ==
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleHDA</string>
+				<key>Replace</key>
+				<data>
+				AAAAAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Zeroing 11d41984 codec (patched by AppleHDA Patcher.app)</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				hBnUEQ==
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleHDA</string>
+				<key>Replace</key>
+				<data>
+				AAAAAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Patching 11d4198b with 10ec0887 codec (patched by AppleHDA Patcher.app)</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				ixnUEQ==
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleHDA</string>
+				<key>Replace</key>
+				<data>
+				hwjsEA==
 				</data>
 			</dict>
 		</array>
